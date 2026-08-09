@@ -1,16 +1,26 @@
 import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { PrismaClient } from "../app/generated/prisma/client";
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaNeon } from "@prisma/adapter-neon";
+const connectionString = process.env.DATABASE_URL;
 
 // حساب الأدمن — من .env لو موجود، وإلا الافتراضي (غيّر كلمة السر في الإنتاج!)
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@syntax.eg";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "Admin@12345";
 
-const adapter = new PrismaBetterSqlite3({
-  url: process.env.DATABASE_URL ?? "file:./dev.db",
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  throw new Error("DATABASE_URL is not set");
+}
+
+const adapter = new PrismaNeon({
+  connectionString,
 });
-const prisma = new PrismaClient({ adapter });
+
+const prisma = new PrismaClient({
+  adapter,
+});
 
 // منتجات تجريبية — مزيج رقمي وملموس
 const products = [
