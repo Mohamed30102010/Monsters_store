@@ -10,13 +10,11 @@ function getDatabaseUrl(): string {
   if (process.env.VERCEL || process.env.NODE_ENV === "production") {
     try {
       const tmpDbPath = path.join("/tmp", "dev.db");
-
       if (!fs.existsSync(tmpDbPath)) {
         const candidatePaths = [
           path.join(process.cwd(), "dev.db"),
           path.join(process.cwd(), "prisma", "dev.db"),
         ];
-
         for (const p of candidatePaths) {
           if (fs.existsSync(p)) {
             fs.copyFileSync(p, tmpDbPath);
@@ -24,7 +22,6 @@ function getDatabaseUrl(): string {
           }
         }
       }
-
       if (fs.existsSync(tmpDbPath)) {
         return `file:${tmpDbPath}`;
       }
@@ -36,24 +33,19 @@ function getDatabaseUrl(): string {
   return envUrl && envUrl.length > 0 ? envUrl : "file:./dev.db";
 }
 
-// Prisma 7 uses driver adapter instead of binary engine
+// Prisma 7 يعتمد على driver adapter بدل الـ binary engine
 function makeClient() {
   const dbUrl = getDatabaseUrl();
-
   const adapter = new PrismaBetterSqlite3({
     url: dbUrl,
   });
-
   return new PrismaClient({
     adapter,
-    log:
-      process.env.NODE_ENV === "development"
-        ? ["error", "warn"]
-        : ["error"],
+    log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   });
 }
 
-// Singleton to avoid creating multiple clients during development (hot reload)
+// Singleton عشان ما نفتحش اتصالات كتير في وضع التطوير (hot reload)
 const globalForPrisma = globalThis as unknown as {
   prisma: ReturnType<typeof makeClient> | undefined;
 };
@@ -62,4 +54,4 @@ export const prisma = globalForPrisma.prisma ?? makeClient();
 
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma;
-}
+        }
