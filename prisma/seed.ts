@@ -2,7 +2,6 @@ import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaNeon } from "@prisma/adapter-neon";
-const connectionString = process.env.DATABASE_URL;
 
 // حساب الأدمن — من .env لو موجود، وإلا الافتراضي (غيّر كلمة السر في الإنتاج!)
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@syntax.eg";
