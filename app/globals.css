@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
-/* ===== هوية سينتاكس — ثيم غامق + بنفسجي متدرّج ===== */
+/* ===== هوية Monster Design — ثيم أبيض + ذهبي ===== */
 @theme {
-  --color-brand-50: #f5f3ff;
-  --color-brand-100: #ede9fe;
-  --color-brand-200: #ddd6fe;
-  --color-brand-300: #c4b5fd;
-  --color-brand-400: #a78bfa;
-  --color-brand-500: #8b5cf6;
-  --color-brand-600: #7c3aed;
-  --color-brand-700: #6d28d9;
-  --color-brand-800: #5b21b6;
-  --color-brand-900: #4c1d95;
+  --color-brand-50: #fdf9ec;
+  --color-brand-100: #faf0cd;
+  --color-brand-200: #f5e2a0;
+  --color-brand-300: #eecd68;
+  --color-brand-400: #e6b73f;
+  --color-brand-500: #d4a72c;
+  --color-brand-600: #b48a1f;
+  --color-brand-700: #8f6b18;
+  --color-brand-800: #6b4f14;
+  --color-brand-900: #4a370f;
 
-  /* ألوان دلالية للثيم الغامق */
-  --color-bg: #09090f;
-  --color-surface: #14141d;
-  --color-surface-2: #1b1b28;
-  --color-line: #2a2a3a;
-  --color-fg: #ededf2;
-  --color-muted: #9a9aab;
+  /* ألوان دلالية للثيم الفاتح */
+  --color-bg: #ffffff;
+  --color-surface: #faf9f6;
+  --color-surface-2: #f2f0ea;
+  --color-line: #e8e2d0;
+  --color-fg: #1a1a1a;
+  --color-muted: #6b6b6b;
 
   --font-sans: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
 }
@@ -32,7 +32,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--color-bg);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -47,9 +47,9 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* نص بتدرّج بنفسجي (زي كلمة Builders في المرجع) */
+/* نص بتدرّج ذهبي */
 .text-gradient {
-  background: linear-gradient(100deg, #a78bfa 0%, #8b5cf6 45%, #c084fc 100%);
+  background: linear-gradient(100deg, #eecd68 0%, #d4a72c 45%, #b48a1f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -57,13 +57,13 @@ body {
 
 /* خلفية زر/عنصر بتدرّج البراند */
 .bg-brand-gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  background: linear-gradient(135deg, #d4a72c 0%, #b48a1f 100%);
 }
 .bg-brand-gradient:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #e6b73f 0%, #d4a72c 100%);
 }
 
 /* توهّج ناعم خلف عناصر الهيرو */
 .glow {
-  box-shadow: 0 0 80px -20px rgba(124, 58, 237, 0.45);
+  box-shadow: 0 0 80px -20px rgba(212, 167, 44, 0.35);
 }
