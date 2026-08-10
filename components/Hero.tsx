@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:py-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-1.5 text-sm font-medium text-brand-300">
           <span className="h-2 w-2 rounded-full bg-brand-500" />
-          صفر عمولة · تحكّم كامل
+          اختياراتك تبدأ من هنا · وتجربتك تهمنا
         </span>
 
         <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-fg sm:text-6xl">
