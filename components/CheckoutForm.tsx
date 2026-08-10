@@ -150,21 +150,15 @@ export default function CheckoutForm({ user, bump, bumpChecked, onBumpChange }: 
         <input type="hidden" name="paymentMethod" value={method} />
 
         {method === "transfer" && (
-          <div className="mt-4 rounded-xl border border-line bg-bg p-4">
-            <p className="text-sm font-semibold text-fg">حوّل على:</p>
-            <ul className="tnum mt-2 space-y-1 text-sm text-muted">
-              <li>
-                محفظة: <span className="text-fg">{site.payment.walletNumber}</span>{" "}
-                ({site.payment.walletName})
-              </li>
-              <li>
-                إنستاباي: <span className="text-fg">{site.payment.instapay}</span>
-              </li>
-              <li>
-                حساب بنكي: <span className="text-fg">{site.payment.bankAccount}</span>
-              </li>
-            </ul>
-            <p className="mt-2 text-xs text-muted">{site.payment.note}</p>
+  <div className="mt-4 rounded-xl border border-line bg-bg p-4">
+    <p className="text-sm font-semibold text-fg">حوّل على أورنج كاش:</p>
+    <ul className="tnum mt-2 space-y-1 text-sm text-muted">
+      <li>
+        محفظة: <span className="text-fg">{site.payment.walletNumber}</span>{" "}
+        ({site.payment.walletName})
+      </li>
+    </ul>
+    <p className="mt-2 text-xs text-muted">{site.payment.note}</p>
 
             <label className="mt-4 block text-sm font-medium text-fg" htmlFor="proof">
               صورة إثبات التحويل *
