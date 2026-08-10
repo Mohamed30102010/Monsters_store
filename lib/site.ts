@@ -1,10 +1,10 @@
 // إعدادات المتجر العامة — عدّلها من مكان واحد
 export const site = {
-  name: "سينتاكس",
-  nameSuffix: "Academy",
+  name: "Monster",
+  nameSuffix: "Design",
   tagline: "منتجاتك الرقمية والملموسة في مكان واحد",
   description:
-    "متجر بسيط وسريع تبيع بيه منتجاتك بصفر عمولة — تحكّم كامل في طلباتك وعملائك.",
+    "متجر بسيط وسريع تشتري منه منتجاتك الرقميه و الملموسه من مكان واحد — جودة تقدر تثق بيها وتسليم سريع يوصلّك فورًا.",
   // روابط تُستخدم لاحقاً في الهيدر/الفوتر
   nav: [
     { label: "المنتجات", href: "/#products" },
@@ -12,14 +12,12 @@ export const site = {
     { label: "الشحن والاسترجاع", href: "/policy" },
     { label: "تواصل", href: "/#contact" },
   ],
-  contactEmail: "hello@example.com",
-  whatsapp: "201000000000",
+  contactEmail: "mfaried530@gmail.com",
+  whatsapp: "01208968446",
   // بيانات الدفع بالتحويل — عدّلها ببياناتك الحقيقية
   payment: {
-    walletNumber: "0100 000 0000", // محفظة (فودافون كاش/انستاباي)
-    walletName: "سينتاكس Academy",
-    bankAccount: "EG00 0000 0000 0000 0000",
-    instapay: "syntax@instapay",
+    walletNumber: "01208968446", // محفظة (اورنج كاش)
+    walletName: "Monster Design",
     note: "بعد التحويل، ارفع صورة الإيصال عشان نأكّد طلبك بسرعة.",
   },
   // ═══ الشحن — عدّل الأرقام دي حسب شغلك ═══
